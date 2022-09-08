@@ -3,12 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Amplify } from "aws-amplify";
+import awsconfig from "./aws-exports";
+import { DataStore } from '@aws-amplify/datastore';
+import { SomeDataModel } from './models';
+
+Amplify.configure(awsconfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
+);
+
+await DataStore.save(
+  new SomeDataModel({
+  "Roberto": "Lorem ipsum dolor sit amet"
+})
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,0 +1,4 @@
+type SomeDataModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Roberto: String
+}
