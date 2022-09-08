@@ -17,7 +17,7 @@ root.render(
   </React.StrictMode>
 );
 
-await DataStore.save(
+DataStore.save(
   new SomeDataModel({
   "Roberto": "Lorem ipsum dolor sit amet"
 })
